@@ -70,6 +70,7 @@ class Auth::EauthAuthenticator < Auth::ManagedAuthenticator
     info = auth_token[:info]
     result.omit_username = true
     result.skip_email_validation = true
+    result.email_valid = true
     result.username = info[:address]
 
     result.email = info[:address]+'@ethmail.cc'
