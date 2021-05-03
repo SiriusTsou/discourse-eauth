@@ -68,7 +68,7 @@ class Auth::EauthAuthenticator < Auth::ManagedAuthenticator
     # Build the Auth::Result object
     result = Auth::Result.new
     info = auth_token[:info]
-    result.omit_username = true
+    # result.omit_username = true
 
     result.email = info[:address]+'@ethmail.cc'
     result.name = ''
