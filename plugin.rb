@@ -69,7 +69,7 @@ class Auth::EauthAuthenticator < Auth::ManagedAuthenticator
     result = Auth::Result.new
     info = auth_token[:info]
     result.omit_username = true
-    result.skip_email_validation = true
+    # result.skip_email_validation = true
     result.email_valid = true
     result.username = info[:address]
 
@@ -90,7 +90,7 @@ end
 
 auth_provider frame_width: 920,
               frame_height: 800,
-              authenticator: Auth::EauthAuthenticator.new,
+              authenticator: Auth::EauthAuthenticator.new('eauthoauth2', trusted: true),
               icon: "fab-ethereum"
 
 register_svg_icon "fab-ethereum" if respond_to?(:register_svg_icon)
